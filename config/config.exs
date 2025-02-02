@@ -7,20 +7,20 @@
 # General application configuration
 import Config
 
-config :phx_pizza,
-  ecto_repos: [PhxPizza.Repo],
+config :phx_pizza_store,
+  ecto_repos: [PhxPizzaStore.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :phx_pizza, PhxPizzaWeb.Endpoint,
+config :phx_pizza_store, PhxPizzaStoreWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: PhxPizzaWeb.ErrorHTML, json: PhxPizzaWeb.ErrorJSON],
+    formats: [html: PhxPizzaStoreWeb.ErrorHTML, json: PhxPizzaStoreWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: PhxPizza.PubSub,
-  live_view: [signing_salt: "cEThlo4V"]
+  pubsub_server: PhxPizzaStore.PubSub,
+  live_view: [signing_salt: "dPQM5ayX"]
 
 # Configures the mailer
 #
@@ -29,12 +29,12 @@ config :phx_pizza, PhxPizzaWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :phx_pizza, PhxPizza.Mailer, adapter: Swoosh.Adapters.Local
+config :phx_pizza_store, PhxPizzaStore.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  phx_pizza: [
+  phx_pizza_store: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  phx_pizza: [
+  phx_pizza_store: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

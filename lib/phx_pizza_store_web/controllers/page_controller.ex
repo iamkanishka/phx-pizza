@@ -1,5 +1,5 @@
-defmodule PhxPizzaWeb.PageController do
-  use PhxPizzaWeb, :controller
+defmodule PhxPizzaStoreWeb.PageController do
+  use PhxPizzaStoreWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

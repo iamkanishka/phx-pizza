@@ -1,4 +1,4 @@
-# PhxPizza
+# PhxPizzaStore
 
 To start your Phoenix server:
 

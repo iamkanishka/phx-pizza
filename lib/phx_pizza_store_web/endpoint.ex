@@ -1,13 +1,13 @@
-defmodule PhxPizzaWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :phx_pizza
+defmodule PhxPizzaStoreWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :phx_pizza_store
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_phx_pizza_key",
-    signing_salt: "IdT8/r2d",
+    key: "_phx_pizza_store_key",
+    signing_salt: "lMhQD6AB",
     same_site: "Lax"
   ]
 
@@ -21,9 +21,9 @@ defmodule PhxPizzaWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :phx_pizza,
+    from: :phx_pizza_store,
     gzip: false,
-    only: PhxPizzaWeb.static_paths()
+    only: PhxPizzaStoreWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule PhxPizzaWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :phx_pizza
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :phx_pizza_store
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule PhxPizzaWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PhxPizzaWeb.Router
+  plug PhxPizzaStoreWeb.Router
 end

@@ -1,5 +1,5 @@
-defmodule PhxPizzaWeb.PageControllerTest do
-  use PhxPizzaWeb.ConnCase
+defmodule PhxPizzaStoreWeb.PageControllerTest do
+  use PhxPizzaStoreWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

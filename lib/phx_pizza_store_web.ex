@@ -1,12 +1,12 @@
-defmodule PhxPizzaWeb do
+defmodule PhxPizzaStoreWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use PhxPizzaWeb, :controller
-      use PhxPizzaWeb, :html
+      use PhxPizzaStoreWeb, :controller
+      use PhxPizzaStoreWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule PhxPizzaWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: PhxPizzaWeb.Layouts]
+        layouts: [html: PhxPizzaStoreWeb.Layouts]
 
       import Plug.Conn
-      import PhxPizzaWeb.Gettext
+      import PhxPizzaStoreWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule PhxPizzaWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PhxPizzaWeb.Layouts, :app}
+        layout: {PhxPizzaStoreWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule PhxPizzaWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import PhxPizzaWeb.CoreComponents
-      import PhxPizzaWeb.Gettext
+      import PhxPizzaStoreWeb.CoreComponents
+      import PhxPizzaStoreWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule PhxPizzaWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: PhxPizzaWeb.Endpoint,
-        router: PhxPizzaWeb.Router,
-        statics: PhxPizzaWeb.static_paths()
+        endpoint: PhxPizzaStoreWeb.Endpoint,
+        router: PhxPizzaStoreWeb.Router,
+        statics: PhxPizzaStoreWeb.static_paths()
     end
   end
 

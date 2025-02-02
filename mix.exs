@@ -1,9 +1,9 @@
-defmodule PhxPizza.MixProject do
+defmodule PhxPizzaStore.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :phx_pizza,
+      app: :phx_pizza_store,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule PhxPizza.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PhxPizza.Application, []},
+      mod: {PhxPizzaStore.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -75,10 +75,10 @@ defmodule PhxPizza.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind phx_pizza", "esbuild phx_pizza"],
+      "assets.build": ["tailwind phx_pizza_store", "esbuild phx_pizza_store"],
       "assets.deploy": [
-        "tailwind phx_pizza --minify",
-        "esbuild phx_pizza --minify",
+        "tailwind phx_pizza_store --minify",
+        "esbuild phx_pizza_store --minify",
         "phx.digest"
       ]
     ]
